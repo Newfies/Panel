@@ -1,21 +1,21 @@
 {
-  "name": "projectpanel",
-  "version": "0.2.0",
-  "description": "A WIP panel to manage and deploy projects",
+  "name": "panel",
+  "version": "0.3.0",
+  "description": "A cool panel!",
   "main": "panel.js",
   "scripts": {
     "start": "nodemon panel.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Newfies/ProjectPanel.git"
+    "url": "git+https://github.com/Newfies/Panel.git"
   },
   "author": "Newfies",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Newfies/ProjectPanel/issues"
+    "url": "https://github.com/Newfies/Panel/issues"
   },
-  "homepage": "https://github.com/Newfies/ProjectPanel#readme",
+  "homepage": "https://github.com/Newfies/Panel#readme",
   "dependencies": {
     "bcrypt": "^6.0.0",
     "body-parser": "^2.2.2",
