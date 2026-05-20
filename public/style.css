@@ -1,135 +1,161 @@
+/* ---------------------------------- Fonts --------------------------------- */
+
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
-:root {
-
+@font-face {
+  font-family: 'Chillax-Regular';
+  src: url('res/fonts/Chillax-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
 }
 
-html,
+@font-face {
+  font-family: 'Chillax-Medium';
+  src: url('res/fonts/Chillax-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Chillax-Bold';
+  src: url('res/fonts/Chillax-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* --------------------------------- Reset ---------------------------------- */
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---------------------------------- Body ---------------------------------- */
+
 body {
-    height: 100%;
-    margin: 0;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #101010;
+  background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='23.07' height='40' patternTransform='scale(2) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(240,6.7%,17.6%,1)'/><path d='M17.62 0l-6.07 10.5m2.74 4.76L8.22 4.75m-5.48 0h12.13M.01 0h23.07M6.07 20L0 9.5m2.74-4.75l-6.07 10.5m-5.48 0H3.33m8.2 4.75L0 .02-11.54 20m40.68 0L23.07 9.5m2.74-4.75l-6.06 10.5m-5.49 0H26.4M34.6 20L23.08.02 11.53 20m-5.46 0L0 30.51m2.74 4.75l-6.07-10.5m-5.48 0H3.33m8.2-4.75L0 40l-11.54-19.98zM17.6 40l-6.06-10.5m2.74-4.76L8.2 35.25m-5.48 0h12.13M0 40h23.07L11.54 20.01m17.6 0l-6.07 10.5m2.74 4.75l-6.06-10.5m-5.49 0H26.4M11.53 20h23.08L23.07 40'  stroke-linecap='square' stroke-width='1' stroke='%23111111ff' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
 }
 
-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #1A1A1A;
-    background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='29' height='50.115' patternTransform='scale(2) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(240,6.7%,17.6%,1)'/><path d='M14.498 16.858L0 8.488.002-8.257l14.5-8.374L29-8.26l-.002 16.745zm0 50.06L0 58.548l.002-16.745 14.5-8.373L29 41.8l-.002 16.744zM28.996 41.8l-14.498-8.37.002-16.744L29 8.312l14.498 8.37-.002 16.745zm-29 0l-14.498-8.37.002-16.744L0 8.312l14.498 8.37-.002 16.745z'  stroke-width='1' stroke='%2300000030' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>")
-}
+/* ------------------------------- Main Layout ------------------------------ */
 
 .container {
-    padding: 3rem;
-    border-radius: 20px;
-    /* background: #202025;
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    box-shadow:
-        0 0 0 1px rgba(255, 255, 255, 0.02),
-        0 20px 50px rgba(0, 0, 0, 0.45);
-    backdrop-filter: blur(10px); */
-    text-align: center;
-    width: 90%;
-    height: 80%;
-    font-family: 'Ubuntu', sans-serif;
-    color: white;
+  width: 95%;
+  height: 90%;
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  background-color: #111111;
+  border: 1px solid #1a1a1a;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
 }
 
-.container h1 {
-    text-align: center;
-    margin-bottom: 2rem;
+/* -------------------------------- Nav Menu -------------------------------- */
+
+.navmenu {
+  height: 100%;
+  background-color: #0d0d0d;
+  border-right: 1px solid #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 25px 0;
 }
 
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 1.5rem;
+.nav-links,
+.nav-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
 }
 
-.project-card {
-    background: #2a2a31;
-    border-radius: 14px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: 0.2s ease;
+.nav-item {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
 }
 
-.project-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    display: block;
+.nav-item:hover {
+  background-color: #1a1a1a;
 }
 
-.project-info {
-    padding: 1rem;
+.nav-item.active {
+  background-color: #1a1a1a;
 }
 
-.project-info h2 {
-    margin: 0 0 0.5rem 0;
-    font-size: 1.1rem;
+/* Active Highlight Bar */
+.nav-item.active::before {
+  content: '';
+  position: absolute;
+  left: -15px;
+  width: 4px;
+  height: 20px;
+  background-color: #ffffff;
+  border-radius: 0 4px 4px 0;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
-.project-info p {
-    margin: 0;
-    color: #b5b5b5;
-    font-size: 0.9rem;
+/* Image Support within Nav */
+.icon-placeholder {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.project-buttons {
-    display: flex;
-    gap: 0.5rem;
-    padding: 1rem;
+.icon-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.4;
+  transition: all 0.2s ease;
 }
 
-.project-buttons button {
-    flex: 1;
-    border: none;
-    border-radius: 8px;
-    padding: 0.7rem;
-    cursor: pointer;
-    font-weight: 600;
-    transition: 0.2s ease;
+.nav-item:hover .icon-placeholder img,
+.nav-item.active .icon-placeholder img {
+  opacity: 1;
+  filter: grayscale(0%);
+  transform: scale(1.1);
 }
 
-.start-btn {
-    background: #3a7d44;
-    color: white;
+/* ------------------------------ Content Area ------------------------------ */
+
+.content {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  height: 100%;
+  background-color: #111111;
+  font-family: 'Chillax-Regular', sans-serif;
 }
 
-.settings-btn {
-    background: #4b5563;
-    color: white;
+.header {
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 20px;
+  margin-bottom: 20px;
 }
 
-.stop-btn {
-    background: #8b2e2e;
-    color: white;
-}
-
-.project-buttons button:hover {
-    filter: brightness(1.1);
-}
-
-@media (max-width: 1600px) {
-    .projects-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
-@media (max-width: 1300px) {
-    .projects-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 900px) {
-    .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-    .projects-grid {
-        grid-template-columns: repeat(1, 1fr);
-    }
+.header p {
+  margin: 0;
+  color: #ffffff;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
 }
