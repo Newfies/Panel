@@ -1,4 +1,4 @@
-// ProjectPanel/panel.js
+// Panel/panel.js
 
 // Modules
 require('dotenv').config();
